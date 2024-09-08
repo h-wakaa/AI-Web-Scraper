@@ -2,13 +2,13 @@
 
 Here’s a quick look at the app:
 
-![App Screenshot 1](./Scraper1.JPG)
+![App Screenshot 1](assets/images/Scraper1.JPG)
 
-![App Screenshot 2](./Scraper2.JPG)
+![App Screenshot 2](assets/images/Scraper2.JPG)
 
-![App Screenshot 3](./Scraper3.JPG)
+![App Screenshot 3](assets/images/Scraper3.JPG)
 
-![App Screenshot 4](./Scraper4.JPG)
+![App Screenshot 4](assets/images/Scraper4.JPG)
 
 
 # App Setup

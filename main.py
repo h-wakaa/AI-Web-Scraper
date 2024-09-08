@@ -7,13 +7,32 @@ from scraper import fetch_html_selenium, save_raw_data, format_data, save_format
 
 from assets import PRICING
 
-
 # Initialize Streamlit app
-st.set_page_config(page_title="Universal Web Scraper")
-st.title("Universal Web Scraper 🦑")
+st.set_page_config(
+    page_title="Cyber Scraper",
+    page_icon="🦑",
+    layout="wide",
+)
+
+# The Header
+st.title("Cyber Scraper 〄🦑")
+
+# Sidebar theme button
+if 'themebutton' not in st.session_state:
+    st.session_state['themebutton'] = 'light'  # Initialize with a default value
+
+if st.sidebar.button('Switch theme', key='switchthemebuttonform'):
+    selected = st.session_state['themebutton']
+    if selected=='light':
+        st._config.set_option('theme.base', "dark")
+        st.session_state['themebutton'] = 'dark'
+    else:
+        st._config.set_option('theme.base', "light")
+        st.session_state['themebutton'] = 'light'
+    st.rerun()
 
 # Sidebar components
-st.sidebar.title("Web Scraper Settings")
+st.sidebar.title("Cyber Scraper Settings")
 model_selection = st.sidebar.selectbox("Select Model", options=list(PRICING.keys()), index=0)
 url_input = st.sidebar.text_input("Enter URL")
 

@@ -25,7 +25,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from openai import OpenAI
 import google.generativeai as genai
 from groq import Groq
-from llama_index.llms.llama_api import LlamaAPI
 
 
 from assets import USER_AGENTS,PRICING,HEADLESS_OPTIONS,SYSTEM_MESSAGE,USER_MESSAGE,LLAMA_MODEL_FULLNAME,GROQ_LLAMA_MODEL_FULLNAME
@@ -338,8 +337,6 @@ def format_data(data, DynamicListingsContainer, DynamicListingModel, selected_mo
         return parsed_response, token_counts
     else:
         raise ValueError(f"Unsupported model: {selected_model}")
-
-
 
 def save_formatted_data(formatted_data, timestamp, output_folder='output'):
     # Ensure the output folder exists

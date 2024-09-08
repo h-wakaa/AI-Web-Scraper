@@ -16,7 +16,7 @@ Navigate into the project directory:
 cd AI-Web-Scraper
 ```
 
-Follow these steps to set up and run the project.
+### Follow these steps to set up and run the project.
 
 ## 1. Set Up Virtual Environment
 
@@ -26,7 +26,7 @@ Create a new folder for the project and set up a virtual environment:
 python -m venv venv
 ```
 
-Activate the virtual environment:
+### Activate the virtual environment:
 - On Windows: 
   ```bash
   venv\Scripts\activate

@@ -1,16 +1,28 @@
+## App Overview
 
-# Project Setup
+Here’s a quick look at the app:
 
-### Follow these steps to set up and run the project.
+![App Screenshot 1](./Scraper1.JPG)
 
-## Clone the Project from GitHub
+![App Screenshot 2](./Scraper2.JPG)
+
+![App Screenshot 3](./Scraper3.JPG)
+
+![App Screenshot 4](./Scraper4.JPG)
+
+
+# App Setup
+
+### Follow these steps to set up and run the App.
+
+## Clone the App from GitHub
 
 First, clone the repository to your local machine:
 
 ```bash
 https://github.com/h-wakaa/AI-Web-Scraper.git
 ```
-Navigate into the project directory:
+Navigate into the App directory:
 
 ```bash
 cd AI-Web-Scraper
@@ -18,7 +30,7 @@ cd AI-Web-Scraper
 
 ## 1. Set Up Virtual Environment
 
-Create a new folder for the project and set up a virtual environment:
+Create a new folder for the App and set up a virtual environment:
 
 ```bash
 python -m venv venv
@@ -36,7 +48,7 @@ python -m venv venv
 
 ## 2. Install Dependencies
 
-Create a `requirements.txt` file in your project folder and add the following libraries:
+Create a `requirements.txt` file in your App folder and add the following libraries:
 
 ```text
 openai
@@ -65,7 +77,7 @@ pip install -r requirements.txt
 
 ## 3. Set Up API Keys
 
-Create a `.env` file in your project directory and add the following API keys:
+Create a `.env` file in your App directory and add the following API keys:
 
 ```env
 GROQ_API_KEY=gsk_************************************************
@@ -75,7 +87,7 @@ GEMINI_API_KEY=AIza**************************************
 
 ## 4. Create `scraper.py`
 
-This file will handle the scraping and parsing logic for your project.
+This file will handle the scraping and parsing logic for your App.
 
 ## 5. Create `main.py`
 

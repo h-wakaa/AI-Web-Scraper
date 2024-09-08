@@ -3,6 +3,23 @@
 
 Follow these steps to set up and run the project.
 
+## Clone the Project from GitHub
+
+First, clone the repository to your local machine:
+
+```bash
+https://github.com/h-wakaa/AI-Web-Scraper.git
+```
+Navigate into the project directory:
+
+```bash
+cd AI-Web-Scraper
+```
+
+# Project Setup
+
+Follow these steps to set up and run the project.
+
 ## 1. Set Up Virtual Environment
 
 Create a new folder for the project and set up a virtual environment:

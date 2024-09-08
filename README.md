@@ -16,8 +16,6 @@ Navigate into the project directory:
 cd AI-Web-Scraper
 ```
 
-# Project Setup
-
 Follow these steps to set up and run the project.
 
 ## 1. Set Up Virtual Environment

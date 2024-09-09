@@ -30,9 +30,12 @@ jobs:
 
     - name: Start Cyber Scraper App
       run: streamlit run main.py &
+
+    - name: Wait for Cyber Scraper to Start
+      run: sleep 5 # Wait for 5 seconds (or more) for the app to initialize
     
     - name: Expose port 8501 using TryCloudflare
       run: cloudflared tunnel --url http://localhost:8501 &
     
     - name: Get TryCloudflare Public URL
-      run: sleep 5 && curl --silent http://127.0.0.1:4040/api/tunnels | jq ".tunnels[0].public_url"
+      run: sleep 60 && curl --silent http://127.0.0.1:4040/api/tunnels | jq ".tunnels[0].public_url"

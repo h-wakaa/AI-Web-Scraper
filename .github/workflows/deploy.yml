@@ -23,5 +23,18 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Run Cyber Scraper App
-      run: streamlit run main.py
+    - name: Install ngrok
+      run: |
+        wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+        unzip ngrok-stable-linux-amd64.zip
+        sudo mv ngrok /usr/local/bin/ngrok
+
+    - name: Start Cyber Scraper
+      run: streamlit run main.py &
+    
+    - name: Start ngrok to expose Streamlit port 8501
+      run: ngrok http 8501
+      continue-on-error: true
+
+    - name: Display ngrok Public URL
+      run: curl --silent http://127.0.0.1:4040/api/tunnels | jq ".tunnels[0].public_url"

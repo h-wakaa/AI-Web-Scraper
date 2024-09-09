@@ -1,4 +1,4 @@
-name: Cyber Scraper Deploy
+name: Cyber Scraper Deploy with TryCloudflare
 
 on:
   push:
@@ -23,18 +23,16 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Install ngrok
+    - name: Install cloudflared
       run: |
-        wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
-        unzip ngrok-stable-linux-amd64.zip
-        sudo mv ngrok /usr/local/bin/ngrok
+        wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
+        sudo dpkg -i cloudflared-linux-amd64.deb
 
-    - name: Start Cyber Scraper
+    - name: Start Cyber Scraper App
       run: streamlit run main.py &
     
-    - name: Start ngrok to expose Streamlit port 8501
-      run: ngrok http 8501
-      continue-on-error: true
-
-    - name: Display ngrok Public URL
-      run: curl --silent http://127.0.0.1:4040/api/tunnels | jq ".tunnels[0].public_url"
+    - name: Expose port 8501 using TryCloudflare
+      run: cloudflared tunnel --url http://localhost:8501 &
+    
+    - name: Get TryCloudflare Public URL
+      run: sleep 5 && curl --silent http://127.0.0.1:4040/api/tunnels | jq ".tunnels[0].public_url"
